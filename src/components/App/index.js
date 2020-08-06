@@ -27,11 +27,11 @@ export default function App() {
 
       {reviews.length ? (
         <>
-          <ReviewSummary total={1} averageRating={averageRating} />
+          <ReviewSummary total={reviews.length} averageRating={averageRating} />
           <Reviews reviews={reviews} />
         </>
       ) : (
-        <div>...</div>
+        <div>loading</div>
       )}
     </div>
   );

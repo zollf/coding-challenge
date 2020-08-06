@@ -14,5 +14,5 @@ test('displays the total and average rating', () => {
 
 test('uses the singular form of reviews if there is only 1 review', () => {
   const { getByText } = render(<ReviewSummary averageRating={5} total={1} />);
-  expect(getByText(/1 review$/)).toBeInTheDocument();
+  expect(getByText(/1 review/)).toBeInTheDocument();
 });

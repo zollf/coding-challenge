@@ -11,9 +11,9 @@ export default function Reviews({ reviews }) {
     let stars = [];
     for(let i = 1; i <= 5; i++){
       if(i <= score){
-        stars.unshift(<img key = {i} className = "star-icon" src={starIconFilled} alt="star-icon" />);
+        stars.unshift(<img key = {i} className = "star-icon" src={starIconFilled} alt="star-icon" data-testid="filled-star" />);
       }else{
-        stars.unshift(<img key = {i} className = "star-icon" src={starIcon} alt="star-icon" />);
+        stars.unshift(<img key = {i} className = "star-icon" src={starIcon} alt="star-icon" data-testid="unfilled-star"/>);
       }
       
     }

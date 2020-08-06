@@ -6,7 +6,7 @@ import ReviewMock from 'test/mocks/Review';
 import Reviews from '.';
 
 const numReviews = 10;
-const reviews = times(numReviews + 1, ReviewMock);
+const reviews = times(numReviews, ReviewMock);
 
 test('displays all reviews', () => {
   const { getAllByTestId } = render(<Reviews reviews={reviews} />)

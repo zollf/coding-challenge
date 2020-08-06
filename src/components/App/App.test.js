@@ -24,7 +24,7 @@ test('loads the reviews', async () => {
 
 test('calculates the total number of reviews and average rating correctly', async () => {
   const total = reviews.length;
-  const averageRating = -1;
+  const averageRating = total/numReviews;
 
   let getByText;
   act(() => {

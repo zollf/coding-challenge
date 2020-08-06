@@ -41,3 +41,10 @@
 .star-icon{
     float:right;
 }
+
+
+.col-centered{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }

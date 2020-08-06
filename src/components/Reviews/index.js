@@ -3,30 +3,52 @@ import React from 'react';
 import './Reviews.css';
 
 import starIcon from 'images/star.svg';
+import starIconFilled from 'images/star--filled.svg';
+
 
 export default function Reviews({ reviews }) {
-  return (
-    <div class = "container-fluid">
-      <div class = "row">
-        <div class = "col-md-6 col-7 col-centered">
-          <h2>All Reviews</h2>
-          <div class = "card-group justify-content-center">
+  function rating(score){
+    let stars = [];
+    for(let i = 1; i <= 5; i++){
+      if(i <= score){
+        stars.unshift(<img key = {i} className = "star-icon" src={starIconFilled} alt="star-icon" />);
+      }else{
+        stars.unshift(<img key = {i} className = "star-icon" src={starIcon} alt="star-icon" />);
+      }
+      
+    }
+    return stars
+  }
 
-            
+  return (
+    <div className = "container-fluid">
+      <div className = "row">
+        <div className = "col-md-8 col-7 col-centered">
+
+          <h2>All Reviews</h2>
+          <div className = "card-group justify-content-center">
 
             {reviews.map(review => (
-              <div class = "review-block card-body" key={review.name} data-testid="review">
-                <p>{review.name}</p>
-                <div>
-                  <img src={starIcon} alt="" />
+              <div className = "review-block card-header" key={review.name} data-testid="review">
+
+                <div className = "card-header">
+                  <p>{review.name}</p>
                 </div>
-                <p>{review.comment}</p>
+                
+                <div className = "card-body">
+                  <p>{review.comment}</p>
+                </div>
+
+                <div className = "card-footer">
+                  {rating(review.rating)}
+                </div>     
+
               </div>
             ))}
-
           </div>
         </div>  
       </div>
     </div>
   )
 }
+

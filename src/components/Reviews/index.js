@@ -15,7 +15,6 @@ export default function Reviews({ reviews }) {
       }else{
         stars.unshift(<img key = {i} className = "star-icon" src={starIcon} alt="star-icon" data-testid="unfilled-star"/>);
       }
-      
     }
     return stars
   }

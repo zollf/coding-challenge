@@ -24,7 +24,13 @@ test('loads the reviews', async () => {
 
 test('calculates the total number of reviews and average rating correctly', async () => {
   const total = reviews.length;
-  const averageRating = total/numReviews;
+
+  let totalRatings = 0;
+  for(let i = 0; i < reviews.length; i++){
+    totalRatings += reviews[i].rating;
+  }
+  
+  const averageRating = totalRatings/total;
 
   let getByText;
   act(() => {

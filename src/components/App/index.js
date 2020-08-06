@@ -18,7 +18,13 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    setAverageRating(reviews.length);
+    let totalRatings = 0;
+   
+    for(let i = 0; i < reviews.length; i++){
+      totalRatings += reviews[i].rating;
+    }
+    
+    setAverageRating(totalRatings/reviews.length);
   }, [reviews]);
 
   return (

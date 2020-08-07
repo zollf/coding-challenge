@@ -30,7 +30,7 @@ test('calculates the total number of reviews and average rating correctly', asyn
     totalRatings += reviews[i].rating;
   }
   
-  const averageRating = totalRatings/total;
+  const averageRating = (totalRatings/total).toFixed(1);
 
   let getByText;
   act(() => {

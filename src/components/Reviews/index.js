@@ -5,7 +5,6 @@ import './Reviews.css';
 import starIcon from 'images/star.svg';
 import starIconFilled from 'images/star--filled.svg';
 
-
 export default function Reviews({ reviews }) {
   function rating(score){
     let stars = [];

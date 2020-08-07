@@ -24,7 +24,7 @@ export default function App() {
       totalRatings += reviews[i].rating;
     }
     
-    setAverageRating(totalRatings/reviews.length);
+    setAverageRating((totalRatings/reviews.length).toFixed(1));
   }, [reviews]);
 
   return (
